@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Kesehatan Andalan Anda</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <!-- Baris Atas: Logo dan Nama Website -->
+        <div class="top-header">
+            <div class="container">
+                <a href="{{ url_for('home') }}" class="top-logo-link">
+                    <img src="{{ url_for('static', filename='/Muka Makhluk/messageImage_1762668932378.jpg') }}" alt="G.O.B.L.O.K Logo" class="top-logo-img">
+                </a>
+                <div class="site-name">
+                    <h1>Generative Online Bot for Learning and Optimizing Knowledge Kesehatan</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Baris Bawah: Menu Navigasi Utama -->
+        <nav class="main-navbar">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li><a href="{{ url_for('home') }}" class="{{ 'active' if request.path == url_for('home') else '' }}">Home</a></li>
+                    <li><a href="{{ url_for('ilmu_mata_page') }}" class="{{ 'active' if request.path == url_for('ilmu_mata_page') else '' }}">Ilmu Mata</a></li>
+                    <li><a href="{{ url_for('kanker_page') }}" class="{{ 'active' if request.path == url_for('kanker_page') else '' }}">Kanker</a></li>
+                    <li><a href="{{ url_for('chatbot_page') }}" class="{{ 'active' if request.path == url_for('chatbot_page') else '' }}">Chatbot</a></li>
+                    <li><a href="{{ url_for('our_team_page') }}" class="{{ 'active' if request.path == url_for('our_team_page') else '' }}">Our Team</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="chatbot-page-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <button id="new-chat-btn" class="new-chat-btn">+ Chat Baru</button>
+            </div>
+            <div class="sidebar-section">
+                <h3>History Chat</h3>
+                <ul id="chat-history-list" class="chat-history-list">
+                </ul>
+            </div>
+            <div class="sidebar-section folder-section">
+                <h3>Folder</h3>
+                <button id="new-folder-btn" class="new-folder-btn">+ Buat Folder Baru</button>
+                <ul id="folder-list" class="folder-list">
+                </ul>
+            </div>
+</aside>
+        </aside>
+
+        <main class="chat-main-area">
+            <div class="container">
+                <h2 id="chat-title">Yuk ngobrol sama Agus Kopling</h2>
+                
+                <div class="chat-container" id="chat-container">
+                </div>
+            
+                <form class="chat-input-form" id="chat-form">
+                    <input type="file" id="file-input" accept="image/*" style="display: none;">
+                    <button type="button" id="attach-btn" class="chat-btn">📎</button>
+                    <input type="text" id="text-input" placeholder="Ketik pesan Anda...">
+                    <button type="submit" id="send-btn" class="chat-btn">➤</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <div id="modal-overlay" class="modal-overlay hidden">
+        <div class="modal-box">
+            <h3 id="modal-title">Judul Modal</h3>
+            <div id="modal-body">
+            </div>
+            <div class="modal-actions">
+                <button id="modal-cancel" class="modal-btn modal-btn-cancel">Batal</button>
+                <button id="modal-confirm" class="modal-btn modal-btn-confirm">Konfirmasi</button>
+            </div>
+        </div>
+    </div>
+    <div id="create-folder-modal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <h3>Buat Folder Baru</h3>
+            <div id="create-folder-body">
+                <input type="text" id="new-folder-name-input" placeholder="Masukkan nama folder..." maxlength="50">
+            </div>
+            <div class="modal-actions">
+                <button id="create-folder-cancel-btn" class="modal-btn modal-btn-cancel">Batal</button>
+                <button id="create-folder-confirm-btn" class="modal-btn modal-btn-confirm">Buat</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,1453 @@
+/* --- CSS CUSTOM PROPERTIES (VARIABEL) --- */
+:root {
+    --primary-color: #00C1D4; /* Teal/Cyan accent */
+    --secondary-color: #4A266A; /* Deep Purple */
+    --gradient-start: #4A266A;
+    --gradient-end: #6A4C93; /* Lighter Purple */
+    --card-bg-color: #ffffff;
+    --text-color: #333333;
+    --text-light: #666666;
+    --border-color: #e0e0e0;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Global */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #ffffff; /* Latar belakang putih untuk seluruh halaman */
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Gaya Navbar --- */
+.top-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+}
+
+.top-header .container {
+    display: flex;
+    align-items: center;
+}
+
+.top-logo-link {
+    text-decoration: none;
+}
+
+.top-logo-img {
+    height: 50px; /* Sedikit lebih besar */
+    width: auto;
+    display: block;
+}
+
+.site-name {
+    flex-grow: 1; /* Mendorong spacer ke kanan dan memungkinkan teks di tengah */
+    text-align: center;
+}
+
+.site-name h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.header-spacer {
+    width: 50px; /* Spacer untuk menyeimbangkan logo di kiri */
+}
+
+/* Baris Navigasi Utama (Sticky) */
+.main-navbar {
+    background-color: var(--secondary-color); /* Menggunakan warna ungu gelap */
+    position: sticky; /* Membuat navbar menempel di atas saat scroll */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.main-navbar .container {
+    padding: 0; /* Hapus padding container untuk menu */
+}
+
+.main-navbar .nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Menengahkan item menu */
+    margin: 0;
+}
+
+.main-navbar .nav-menu li {
+    margin: 0;
+}
+
+.main-navbar .nav-menu a {
+    display: block; /* Membuat seluruh area bisa diklik */
+    text-decoration: none;
+    color: #ffffff; /* Teks putih untuk kontras */
+    font-weight: 500;
+    padding: 18px 25px; /* Padding yang nyaman untuk tombol */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-navbar .nav-menu a:hover,
+.main-navbar .nav-menu a.active {
+    background-color: rgba(255, 255, 255, 0.1); /* Efek hover transparan */
+    color: var(--primary-color); /* Warna aksen teal saat hover/aktif */
+}
+
+main {
+    padding-top: 20px; /* Jarak kecil dari navbar */
+}
+
+.hero-carousel-section {
+    padding-top: 100px; /* Tambah padding atas agar tidak tertutup navbar */
+    background-color: #f8f9fa; /* Berikan sedikit warna latar agar kontras */
+}
+
+.knowledge-main {
+    Padding: 10px 0 0px 0;
+    min-height: 10vh;
+}
+
+.chatbot-page-wrapper {
+    margin-top: 0; /* Reset margin, karena padding sudah di main */
+    height: calc(100vh - 69px); /* Kalkulasi ulang tinggi chatbot */
+}
+
+/* --- Gaya Halaman Utama (index.html) --- */
+.hero {
+    padding: 30px 0; /* Ruang untuk kotak hero */
+    background-color: #ffffff;
+}
+
+/* --- INI ADALAH KOTAK/KARTU UTAMA --- */
+.hero-card {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    border-radius: 16px;
+    box-shadow: var(--shadow-hover);
+    display: flex;
+    align-items: center;
+    padding: 60px;
+    gap: 60px;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.hero-card .hero-content {
+    flex: 1;
+}
+
+.hero-card .hero-image {
+    flex-shrink: 0;
+    max-width: 450px;
+}
+
+.hero-card .hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.hero-card h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: #ffffff;
+}
+
+.hero-card p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #ffffff; /* Background tombol putih */
+    color: var(--primary-color); /* Teks tombol menggunakan warna aksen */
+    padding: 16px 32px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.team-section {
+    padding: 100px 0;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 60px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.team-member {
+    background-color: var(--card-bg-color);
+    border-radius: 16px;
+    padding: 40px 30px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #f0f0f0;
+}
+
+.team-member h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.learn-more-btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    background-color: #00a8b8;
+}
+
+.member-details {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    font-size: 14px;
+    color: var(--text-light);
+    text-align: left;
+    font-style: italic;
+}
+
+.member-details.hidden {
+    display: none;
+}
+
+/* --- Gaya untuk Halaman Ilmu Mata (ilmu_mata.html) --- */
+.knowledge-main {
+    padding: 120px 0 80px 0;
+    min-height: 100vh;
+}
+
+.knowledge-main .container {
+    max-width: 1000px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.knowledge-main h1 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.knowledge-main > .container > p {
+    text-align: center;
+    color: var(--text-light);
+}
+
+.disease-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.disease-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: var(--card-bg-color);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.disease-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.disease-image {
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.disease-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.disease-info {
+    flex-grow: 1;
+}
+
+.disease-info h2 {
+    color: var(--text-color);
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.disease-info p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.disease-info .learn-more-btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.disease-info .learn-more-btn:hover {
+    background-color: #00a8b8;
+}
+
+/* --- Gaya Modal (Generik) --- */
+.modal-overlay.hidden {
+    display: none;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-box {
+    background-color: var(--card-bg-color);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-hover);
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-box h3 {
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+.modal-box p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+.modal-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    float: right;
+}
+
+.modal-btn-cancel {
+    background-color: #e0e0e0;
+    color: var(--text-color);
+}
+
+.modal-btn-cancel:hover {
+    background-color: #d0d0d0;
+}
+
+/* --- Gaya Halaman Chatbot (chatbot.html) --- */
+.chatbot-page-wrapper {
+    display: flex;
+    height: calc(100vh - 69px);
+    margin-top: 69px;
+    background-color: #f4f7f6; /* Latar belakang untuk area chatbot */
+    padding: 20px;
+    gap: 20px;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: var(--card-bg-color);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    overflow-y: auto;
+    box-shadow: var(--shadow);
+}
+
+.sidebar-section {
+    margin-bottom: 25px;
+}
+
+.sidebar-section h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.new-chat-btn, .new-folder-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--card-bg-color);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.new-chat-btn:hover, .new-folder-btn:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.chat-history-list, .folder-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.chat-history-item {
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.chat-history-item:hover {
+    background-color: #f0f0f0;
+}
+
+.chat-history-item.active {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.chat-history-item .chat-title-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+}
+
+.chat-history-item .chat-actions {
+    display: none;
+    gap: 5px;
+}
+
+.chat-history-item:hover .chat-actions,
+.chat-history-item.active .chat-actions {
+    display: flex;
+}
+
+.chat-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 2px 5px;
+    border-radius: 4px;
+    color: inherit;
+}
+
+.chat-actions button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.chat-main-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-bg-color);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.chat-main-area .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    max-width: none;
+}
+
+.chat-main-area h2 {
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.chat-container {
+    flex-grow: 1;
+    background-color: #f8f9fa;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow-y: auto;
+    padding: 20px;
+    margin-bottom: 0;
+}
+
+.chat-input-form {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg-color);
+    border-top: 1px solid var(--border-color);
+    padding: 15px 20px;
+    gap: 15px;
+}
+
+#file-input {
+    display: none;
+}
+
+#text-input {
+    flex-grow: 1;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    outline: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#text-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 193, 212, 0.1);
+}
+
+.chat-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 22px;
+    color: var(--text-light);
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.chat-btn:hover {
+    background-color: #f0f0f0;
+}
+
+#send-btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+#send-btn:hover {
+    background-color: #00a8b8;
+}
+
+/* --- Style Pesan --- */
+.chat-message {
+    margin-bottom: 15px;
+    padding: 12px 18px;
+    border-radius: 18px;
+    width: fit-content;
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.bot-message {
+    background-color: #e9e9eb;
+    color: #000;
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+}
+
+.user-message {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-bottom-right-radius: 5px;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.user-message img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #c62828;
+}
+
+#welcome-typing p,
+#response-typing p {
+    font-style: italic;
+    color: var(--text-light);
+    animation-name: typing-fade;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes typing-fade {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+/* --- Gaya Folder dan Dropdown --- */
+.folder-section {
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.folder-item {
+    margin-bottom: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.folder-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.folder-header:hover {
+    background-color: #e9ecef;
+}
+
+.folder-icon {
+    margin-right: 10px;
+    font-size: 16px;
+    transition: transform 0.2s ease;
+}
+
+.folder-item.expanded .folder-icon {
+    transform: rotate(90deg);
+}
+
+.folder-name {
+    flex-grow: 1;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.folder-chat-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.folder-item.expanded .folder-chat-list {
+    max-height: 500px;
+}
+
+.folder-chat-list .chat-history-item {
+    padding-left: 35px;
+    background-color: transparent;
+}
+
+.folder-chat-list .chat-history-item:hover {
+    background-color: #f0f0f0;
+}
+
+.folder-chat-list .chat-history-item.active {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.chat-actions .move-btn {
+    font-size: 12px;
+}
+
+.move-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    z-index: 100;
+    display: none;
+}
+
+.move-dropdown.show {
+    display: block;
+}
+
+.move-dropdown a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.move-dropdown a:hover {
+    background-color: #f0f0f0;
+}
+
+#new-folder-name-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+#new-folder-name-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 193, 212, 0.1);
+}
+
+/* --- Animasi Spinner untuk Redirect Modal --- */
+.redirect-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    transition: opacity 0.3s ease;
+}
+
+.redirect-modal.hidden {
+    display: none;
+}
+
+.redirect-modal-box {
+    background-color: var(--card-bg-color);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-hover);
+    text-align: center;
+}
+
+.redirect-modal-box p {
+    margin-top: 20px;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    /* Aturan khusus untuk hero card di mobile */
+    .hero-card {
+        flex-direction: column;
+        padding: 40px 30px;
+        text-align: center;
+    }
+    
+    .hero-card .hero-image {
+        max-width: 100%;
+    }
+
+    .chatbot-page-wrapper {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        border-radius: 16px 16px 0 0;
+    }
+    .chat-main-area {
+        border-radius: 0 0 16px 16px;
+    }
+    .disease-grid-container {
+        grid-template-columns: 1fr;
+    }
+    .disease-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .disease-image {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    .team-section h2 {
+        font-size: 28px;
+    }
+}
+
+.chat-input-form.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.chat-input-form.disabled input,
+.chat-input-form.disabled button {
+    cursor: not-allowed;
+}
+
+.modal-box h4 {
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 8px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.modal-box p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    color: var(--text-light);
+}
+
+.modal-box ul {
+    list-style-type: disc;
+    padding-left: 25px;
+    margin-bottom: 20px;
+}
+
+.modal-box li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+.modal-box h4:first-of-type {
+    margin-top: 10px;
+}
+
+/* --- Gaya Carousel Hero (VERSI PERBAIKAN) --- */
+.hero-carousel-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.hero-carousel {
+    position: relative;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    border-radius: 16px;
+    box-shadow: var(--shadow-hover);
+    overflow: hidden; /* SANGAT PENTING: Menyembunyikan kartu yang tidak aktif */
+    color: #ffffff;
+}
+
+/* Track yang berisi semua kartu dan akan digeser */
+.carousel-track {
+    display: flex; /* SANGAT PENTING: Menyusun kartu secara horizontal */
+    height: 100%;
+    transition: transform 0.5s ease-in-out; /* Animasi swipe yang halus */
+}
+
+/* Setiap kartu individual */
+.hero-carousel .carousel-card {
+    /* SANGAT PENTING: Setiap kartu mengambil lebar penuh dan tidak bisa mengecil */
+    flex: 0 0 100%;
+    display: flex; /* Flex untuk konten di dalam kartu */
+    align-items: center;
+    padding: 60px;
+    gap: 60px;
+}
+
+/* Gaya untuk konten di dalam kartu (tidak berubah) */
+.hero-carousel .hero-content { flex: 1; }
+.hero-carousel .hero-image { flex-shrink: 0; max-width: 450px; }
+.hero-carousel .hero-image img { width: 100%; height: auto; border-radius: 12px; }
+.hero-subtitle { font-size: 18px; font-weight: 600; color: var(--primary-color); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.hero-carousel h1 { font-size: 48px; font-weight: 700; line-height: 1.2; margin-bottom: 24px; color: #ffffff; }
+.hero-carousel p { font-size: 18px; color: rgba(255, 255, 255, 0.9); margin-bottom: 40px; }
+
+/* Tombol Navigasi Carousel */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border: none;
+    padding: 15px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-control.prev {
+    left: 0;
+    border-radius: 8px 0 0 8px;
+}
+
+.carousel-control.next {
+    right: 0;
+}
+
+.carousel-control:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Indikator Dot */
+.carousel-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--primary-color);
+}
+
+.team-overview-section {
+    padding: 100px 0;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.team-overview-section h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 60px;
+}
+
+.team-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Tetap 2 kolom di desktop */
+    gap: 40px;
+}
+
+/* --- Ini adalah perubahan utama pada kartu --- */
+.team-overview-card {
+    display: flex;
+    flex-direction: column; /* KUNCI: Menumpuk elemen secara vertikal */
+    background-color: var(--card-bg-color);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden; /* Penting agar gambar tidak keluar dari sudut lengkung */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left; /* Teks di dalam kartu rata kiri */
+}
+
+.team-overview-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Gaya untuk gambar yang memenuhi lebar kartu */
+.team-overview-card .card-image {
+    width: 100%; /* Memenuhi lebar kartu */
+    height: 220px; /* Beri tinggi tetap agar seragam */
+    flex-shrink: 0; /* Mencegah gambar mengecil */
+}
+
+.team-overview-card .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar memenuhi area tanpa distorsi */
+    display: block;
+}
+
+/* Gaya untuk konten teks di bawah gambar */
+.team-overview-card .card-content {
+    padding: 30px; /* Beri jarak yang nyaman */
+    flex-grow: 1; /* Biarkan area ini tumbuh */
+    display: flex;
+    flex-direction: column;
+}
+
+.team-overview-card .card-content h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.team-overview-card .card-content p {
+    font-size: 16px;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    flex-grow: 1; /* Mendorong tombol ke bawah */
+}
+
+/* Tombol di dalam konten kartu */
+.team-overview-card .card-content .btn-primary {
+    align-self: flex-start; /* Tombol rata kiri */
+}
+
+/* --- Tambahkan Responsivitas --- */
+@media (max-width: 768px) {
+    .team-overview-grid {
+        grid-template-columns: 1fr; /* Di layar kecil, jadi 1 kolom */
+    }
+}
+
+/* --- Gaya Halaman Our Team (Alternating Layout) --- */
+.team-main {
+    padding: 30px 0 0px 0;
+}
+
+.team-main .container {
+    max-width: 1000px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.team-main h1 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.team-main > .container > p {
+    color: var(--text-light);
+}
+
+.team-selector {
+    margin-bottom: 40px;
+}
+
+.team-selector label {
+    font-weight: 600;
+    margin-right: 10px;
+    color: var(--text-color);
+}
+
+.team-selector select {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.team-alternating-grid.hidden {
+    display: none;
+}
+
+/* --- Kartu Anggota Tim (Alternating) --- */
+.team-member-card {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 60px;
+    background-color: var(--card-bg-color);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* --- Khusus untuk kartu yang dibalik (gambar di kanan) --- */
+.team-member-card-reverse {
+    flex-direction: row-reverse;
+}
+
+/* Wadah Gambar */
+.team-member-card .member-image {
+    flex-shrink: 0; /* Mencegah gambar mengecil */
+    width: 40%; /* Gambar mengambil 40% lebar */
+}
+
+.team-member-card .member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar memenuhi wadah */
+    display: block;
+}
+
+/* Wadah Info (Teks) */
+.team-member-card .member-info {
+    flex-grow: 1; /* Info mengambil sisa ruang */
+    padding: 40px;
+    text-align: left;
+}
+
+.team-member-card .member-info h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.team-member-card .member-info p {
+    font-size: 16px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* --- Responsivitas untuk Layout Alternating --- */
+@media (max-width: 768px) {
+    .team-member-card,
+    .team-member-card-reverse {
+        flex-direction: column; /* Di mobile, tumpuk gambar dan teks */
+        text-align: center;
+    }
+
+    .team-member-card .member-image {
+        width: 100%;
+        height: 250px; /* Beri tinggi tetap untuk gambar di mobile */
+    }
+    
+    .team-member-card .member-info {
+        padding: 30px 20px;
+    }
+}
+
+.team-member-card .member-info h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 5px; /* Kurangi margin bawah */
+}
+
+/* Tambahkan ini untuk role/subtitle */
+.team-member-card .member-info .member-role {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.team-member-card .member-info .member-overview {
+    font-size: 16px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 25px; /* Tambah jarak ke tombol */
+}
+
+/* --- Gaya Modal Detail Anggota --- */
+.team-detail-modal.hidden {
+    display: none;
+}
+
+.team-detail-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.team-detail-modal-box {
+    background-color: var(--card-bg-color);
+    border-radius: 16px;
+    box-shadow: var(--shadow-hover);
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    padding: 40px;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--text-light);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.team-detail-modal-box h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.modal-member-role {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.modal-section {
+    margin-bottom: 25px;
+}
+
+.modal-section h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.modal-section ul {
+    list-style-type: '✓ '; /* Bullet point custom */
+    padding-left: 20px;
+    margin: 0;
+}
+
+.modal-section li {
+    font-size: 16px;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+    max-width: 350px; /* Lebar maksimal dropdown */
+    margin: 20px auto 40px auto; /* Tengahkan dan beri jarak bawah */
+    font-family: 'Poppins', sans-serif;
+}
+
+.dropdown-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.dropdown-trigger:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 193, 212, 0.15);
+}
+
+#selected-team-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.dropdown-arrow {
+    color: var(--text-light);
+    transition: transform 0.3s ease;
+    flex-shrink: 0; /* Mencegah ikon mengecil */
+}
+
+/* Saat dropdown terbuka, panahnya berputar */
+.custom-dropdown.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Daftar Opsi */
+.dropdown-options {
+    position: absolute;
+    top: calc(100% + 8px); /* Posisikan tepat di bawah trigger dengan jarak 8px */
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: var(--shadow-hover);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    overflow: hidden; /* Memastikan rounded corner berlaku untuk anak-anaknya */
+}
+
+/* Tampilkan opsi saat dropdown terbuka */
+.custom-dropdown.open .dropdown-options {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-option {
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.dropdown-option:hover {
+    background-color: #f0f0f0;
+}
+
+/* Opsi yang sedang aktif/terpilih */
+.dropdown-option.active {
+    background-color: rgba(0, 193, 212, 0.1);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Opsi pertama tidak boleh memiliki rounded corner atas */
+.dropdown-option:first-child {
+    border-radius: 12px 12px 0 0;
+}
+
+/* Opsi terakhir tidak boleh memiliki rounded corner bawah */
+.dropdown-option:last-child {
+    border-radius: 0 0 12px 12px;
+}

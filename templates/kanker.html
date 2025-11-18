@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilmu Mata - G.O.B.L.O.K</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="top-header">
+            <div class="container">
+                <a href="{{ url_for('home') }}" class="top-logo-link">
+                    <img src="{{ url_for('static', filename='/Muka Makhluk/messageImage_1762668932378.jpg') }}" alt="G.O.B.L.O.K Logo" class="top-logo-img">
+                </a>
+                <div class="site-name">
+                    <h1>Generative Online Bot for Learning and Optimizing Knowledge Kesehatan</h1>
+                </div>
+                <div class="header-spacer"></div>
+            </div>
+        </div>
+
+        <!-- Baris Bawah: Menu Navigasi Utama -->
+        <nav class="main-navbar">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li><a href="{{ url_for('home') }}" class="{{ 'active' if request.path == url_for('home') else '' }}">Home</a></li>
+                    <li><a href="{{ url_for('ilmu_mata_page') }}" class="{{ 'active' if request.path == url_for('ilmu_mata_page') else '' }}">Ilmu Mata</a></li>
+                    <li><a href="{{ url_for('kanker_page') }}" class="{{ 'active' if request.path == url_for('kanker_page') else '' }}">Kanker</a></li>
+                    <li><a href="{{ url_for('chatbot_page') }}" class="{{ 'active' if request.path == url_for('chatbot_page') else '' }}">Chatbot</a></li>
+                    <li><a href="{{ url_for('our_team_page') }}" class="{{ 'active' if request.path == url_for('our_team_page') else '' }}">Our Team</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="knowledge-main">
+        <div class="container">
+            <h1>Ilmu Penyakit Mata</h1>
+            <p>Pelajari lebih lanjut tentang berbagai kondisi kesehatan mata umum di sini.</p>
+        </div>
+
+        <!-- TAMBAHKAN KONTAINER GRID BARU INI -->
+        <div class="disease-grid-container">
+            <!-- Card untuk AMD -->
+            <div class="disease-card">
+                <div class="disease-image">
+                    <img src="{{ url_for('static', filename='/Foto Penyakit/AMD-removebg-preview.png') }}" alt="AMD">
+                </div>
+                <div class="disease-info">
+                    <h2>Degenerasi Makula Terkait Usia (AMD)</h2>
+                    <p style="text-align: justify;">Kondisi yang memengaruhi bagian tengah retina (makula) dan dapat menyebabkan hilangnya penglihatan pusat. Ini adalah penyebab utama kebutaan pada orang berusia di atas 60 tahun.</p>
+                    <button class="learn-more-btn" data-disease="amd">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Card untuk Diabetik Retinopati -->
+            <div class="disease-card">
+                <div class="disease-image">
+                    <img src="{{ url_for('static', filename='/Foto Penyakit/Diabetik-removebg-preview.png') }}" alt="Diabetik Retinopati">
+                </div>
+                <div class="disease-info">
+                    <h2>Diabetik Retinopati</h2>
+                    <p style="text-align: justify;">Komplikasi diabetes yang memengaruhi pembuluh darah di retina. Ini dapat menyebabkan pembuluh darah membengkak dan bocor, atau tumbuh abnormal di permukaan retina.</p>
+                    <button class="learn-more-btn" data-disease="diabetic-retinopathy">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Card untuk Katarak -->
+            <div class="disease-card">
+                <div class="disease-image">
+                    <img src="{{ url_for('static', filename='/Foto Penyakit/Cataract-removebg-preview.png') }}" alt="Katarak">
+                </div>
+                <div class="disease-info">
+                    <h2>Katarak</h2>
+                    <p style="text-align: justify;">Pengaburan lensa mata yang dapat menyebabkan penurunan penglihatan. Katarak seringkali berkembang perlahan dan dapat memengaruhi satu atau kedua mata.</p>
+                    <button class="learn-more-btn" data-disease="cataract">Learn More</button>
+                </div>
+            </div>
+        </div>
+        <!-- AKHIR KONTAINER GRID BARU -->
+    </main>
+
+    <!-- Modal untuk detail penyakit -->
+    <div id="disease-modal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <h3 id="modal-title"></h3>
+            <div id="modal-body"></div>
+            <button id="modal-close" class="modal-btn modal-btn-cancel">Tutup</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/ilmu_mata.js') }}"></script>
+</body>
+</html>

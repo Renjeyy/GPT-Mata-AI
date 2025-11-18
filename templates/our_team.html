@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="top-header">
+            <div class="container">
+                <a href="{{ url_for('home') }}" class="top-logo-link">
+                    <img src="{{ url_for('static', filename='/Muka Makhluk/messageImage_1762668932378.jpg') }}" alt="G.O.B.L.O.K Logo" class="top-logo-img">
+                </a>
+                <div class="site-name">
+                    <h1>Generative Online Bot for Learning and Optimizing Knowledge Kesehatan</h1>
+                </div>
+                <div class="header-spacer"></div>
+            </div>
+        </div>
+        <nav class="main-navbar">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('ilmu_mata_page') }}">Ilmu Mata</a></li>
+                    <li><a href="{{ url_for('kanker_page') }}">Kanker</a></li>
+                    <li><a href="{{ url_for('chatbot_page') }}">Chatbot</a></li>
+                    <li><a href="{{ url_for('our_team_page') }}" class="active">Our Team</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="team-main">
+        <div class="container">
+            <h1>Tim Kami</h1>
+            <p>Kenali lebih dekat para ahli di balik solusi kesehatan AI kami.</p>
+
+            <div class="custom-dropdown">
+                <div class="dropdown-trigger">
+                    <span id="selected-team-name">Tim Komputasi Intelegensia</span>
+                    <svg class="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                        <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <ul class="dropdown-options">
+                    <li class="dropdown-option active" data-value="ai">Tim Komputasi Intelegensia</li>
+                    <li class="dropdown-option" data-value="bio">Tim Bioinformatika</li>
+                </ul>
+            </div>
+
+            <!-- Grid untuk Tim Komputasi Intelegensia -->
+            <div id="team-ai-grid" class="team-alternating-grid {% if selected_team != 'ai' %}hidden{% endif %}">
+                <!-- Anggota 1 -->
+                <div class="team-member-card" 
+                    data-name="Renzie Aditya Fattah Hudiantoro" 
+                    data-role="Lead AI Technical Researcher"
+                    data-bio='["Lahir di Jakarta, 16 November 2004", "S1 Matematika, Universitas Indonesia", "Minat di bidang Deep Learning dan Artificial Intelligence"]'
+                    data-specialization='["Generative Adversarial Network (GAN)", "Deep Learning for Medical Imaging", "Advanced Computer Vision"]'
+                    data-contribution='["Merancang arsitektur model ViT", "Melatih model ViT dengan dataset fundus", "Membangun pipeline integrasi model ke chatbot"]'>
+                    <div class="member-image"><img src="{{ url_for('static', filename='Muka Makhluk/Amorim.jpeg') }}" alt="Renzie Aditya"></div>
+                    <div class="member-info">
+                        <h3>Renzie Aditya Fattah H</h3>
+                        <p class="member-role">Lead AI Technical Researcher</p>
+                        <p class="member-overview">Pemimpin dari Tim Komputasi Intelegensia yang merancang arsitektur chatbot pada website dan melatih data penyakit fundus berbasis citra</p>
+                        <button class="btn-primary learn-more-detail-btn">Pelajari lebih lanjut</button>
+                    </div>
+                </div>
+                <div class="team-member-card" 
+                    data-name="Luthfi Athalla Herdita Wiryaman" 
+                    data-role="IT Technical Support"
+                    data-bio='["Lahir di Bandung, 22 Juli 1996", "S1 di Sistem Informasi, ITS", "Penggemar Teuku Kumayl Sojuangon Al Farizi"]'
+                    data-specialization='["Machine Learning (ML)", "Deep Learning (DL)", "Rust Language Programming"]'
+                    data-contribution='["Merancang arsitektur model ViT", "Melatih model ViT dengan dataset fundus", "Membangun pipeline integrasi model ke chatbot"]'>
+                    <div class="member-image"><img src="{{ url_for('static', filename='Muka Makhluk/Amorim.jpeg') }}" alt="Renzie Aditya"></div>
+                    <div class="member-info">
+                        <h3>Luthfi Athalla Herdita W</h3>
+                        <p class="member-role">IT Technical Support</p>
+                        <p class="member-overview">Bertugas dalam membangun model deep learning transformers untuk melatih berbagai jenis data kanker berbasis citra dan mengintegrasikan API dengan chatbot</p>
+                        <button class="btn-primary learn-more-detail-btn">Pelajari lebih lanjut</button>
+                    </div>
+                </div>
+                <div class="team-member-card"
+                    data-name="Haikal Fikri" 
+                    data-role="IT Technical Support"
+                    data-bio='["Lahir di Surabaya, 5 Januari 1997", "S1 di Teknik Informatika, UNAIR", "Passionate tentang UI/UX"]'
+                    data-specialization='["Natural Language Processing (NLP)", "Deep Learning", "Advanced Statistics"]'
+                    data-contribution='["Merancang arsitektur model ViT", "Melatih model ViT dengan dataset kanker", "Melakukan fine tuning pada model untuk mencapai akurasi optimal"]'>
+                    <div class="member-image"><img src="{{ url_for('static', filename='Muka Makhluk/Gullit.jpeg') }}" alt="Haikal Fikri"></div>
+                    <div class="member-info">
+                        <h3>Haikal Fikri</h3>
+                        <p class="member-role">IT Technical Support</p>
+                        <p class="member-overview">Bertugas dalam membangun model deep learning transformers untuk melatih berbagai jenis data kanker berbasis citra dan mengintegrasikan API dengan chatbot</p>
+                        <button class="btn-primary learn-more-detail-btn">Pelajari lebih lanjut</button>
+                    </div>
+                </div>
+                <div class="team-member-card"
+                    data-name="Khairunnisa Nurul Jannah" 
+                    data-role="Frontend dan Backend Developer Support"
+                    data-bio='["Lahir di Surabaya, 5 Januari 1997", "S1 di Teknik Informatika, UNAIR", "Passionate tentang UI/UX"]'
+                    data-specialization='["React.js & Vue.js", "Responsive Web Design", "User Experience (UX) Principles"]'
+                    data-contribution='["Merancang antarmuka pengguna yang intuitif", "Mengimplementasikan desain yang responsif", "Memastikan pengalaman pengguna yang mulus"]'>
+                    <div class="member-image"><img src="{{ url_for('static', filename='Muka Makhluk/Gullit.jpeg') }}" alt="Haikal Fikri"></div>
+                    <div class="member-info">
+                        <h3>Khairunnisa Nurul Jannah</h3>
+                        <p class="member-role">Frontend and Backend Support</p>
+                        <p class="member-overview">Anggota yang bertugas dalam menyusun frontend dan backend pada website agar terasa interaktif</p>
+                        <button class="btn-primary learn-more-detail-btn">Pelajari lebih lanjut</button>
+                    </div>
+                </div>
+                <div class="team-member-card"
+                    data-name="Haikal Fikri" 
+                    data-role="Frontend dan Backend Developer Support"
+                    data-bio='["Lahir di Surabaya, 5 Januari 1997", "S1 di Teknik Informatika, UNAIR", "Passionate tentang UI/UX"]'
+                    data-specialization='["React.js & Vue.js", "Responsive Web Design", "User Experience (UX) Principles"]'
+                    data-contribution='["Merancang antarmuka pengguna yang intuitif", "Mengimplementasikan desain yang responsif", "Memastikan pengalaman pengguna yang mulus"]'>
+                    <div class="member-image"><img src="{{ url_for('static', filename='Muka Makhluk/Gullit.jpeg') }}" alt="Haikal Fikri"></div>
+                    <div class="member-info">
+                        <h3>Jasmine Salsabila</h3>
+                        <p class="member-role">Frontend and Backend Support</p>
+                        <p class="member-overview">Anggota yang bertugas dalam menyusun frontend dan backend pada website agar terasa interaktif</p>
+                        <button class="btn-primary learn-more-detail-btn">Pelajari lebih lanjut</button>
+                    </div>
+                </div>
+                <div class="team-member-card"
+                    data-name="Haikal Fikri" 
+                    data-role="Frontend dan Backend Developer Support"
+                    data-bio='["Lahir di Surabaya, 5 Januari 1997", "S1 di Teknik Informatika, UNAIR", "Passionate tentang UI/UX"]'
+                    data-specialization='["React.js & Vue.js", "Responsive Web Design", "User Experience (UX) Principles"]'
+                    data-contribution='["Merancang antarmuka pengguna yang intuitif", "Mengimplementasikan desain yang responsif", "Memastikan pengalaman pengguna yang mulus"]'>
+                    <div class="member-image"><img src="{{ url_for('static', filename='Muka Makhluk/Gullit.jpeg') }}" alt="Haikal Fikri"></div>
+                    <div class="member-info">
+                        <h3>Alya Fitria</h3>
+                        <p class="member-role">Frontend and Backend Support</p>
+                        <p class="member-overview">Anggota yang bertugas dalam menyusun frontend dan backend pada website agar terasa interaktif</p>
+                        <button class="btn-primary learn-more-detail-btn">Pelajari lebih lanjut</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid untuk Tim Bioinformatika -->
+            <div id="team-bio-grid" class="team-alternating-grid {% if selected_team != 'bio' %}hidden{% endif %}">
+                <!-- Anggota 1 -->
+                <div class="team-member-card" 
+                    data-name="Bioinformatika Member 1" 
+                    data-role="Bioinformatika Role 1"
+                    data-bio='["Biodata 1", "Biodata 2", "Biodata 3"]'
+                    data-specialization='["Spesialisasi 1", "Spesialisasi 2", "Spesialisasi 3"]'
+                    data-contribution='["Kontribusi 1", "Kontribusi 2", "Kontribusi 3"]'>
+                    <div class="member-image"><img src="{{ url_for('static', filename='Muka Makhluk/Amorim.jpeg') }}" alt="Bioinformatika Member 1"></div>
+                    <div class="member-info">
+                        <h3>Bioinformatika Member 1</h3>
+                        <p class="member-role">Bioinformatika Role 1</p>
+                        <p class="member-overview">Overview singkat tentang anggota tim bioinformatika ini.</p>
+                        <button class="btn-primary learn-more-detail-btn">Pelajari lebih lanjut</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal untuk Detail Anggota -->
+    <div id="team-detail-modal" class="team-detail-modal hidden">
+        <div class="team-detail-modal-box">
+            <button class="modal-close-btn">&times;</button>
+            <h2 id="modal-member-name"></h2>
+            <p id="modal-member-role" class="modal-member-role"></p>
+            
+            <div class="modal-section">
+                <h4>Biodata</h4>
+                <ul id="modal-member-bio"></ul>
+            </div>
+            
+            <div class="modal-section">
+                <h4>Bidang Spesialisasi</h4>
+                <ul id="modal-member-specialization"></ul>
+            </div>
+            
+            <div class="modal-section">
+                <h4>Kontribusi</h4>
+                <ul id="modal-member-contribution"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Logika Dropdown Kustom ---
+            const dropdown = document.querySelector('.custom-dropdown');
+            const dropdownTrigger = dropdown.querySelector('.dropdown-trigger');
+            const dropdownOptions = dropdown.querySelector('.dropdown-options');
+            const selectedTeamName = document.getElementById('selected-team-name');
+            const options = dropdown.querySelectorAll('.dropdown-option');
+            
+            const aiGrid = document.getElementById('team-ai-grid');
+            const bioGrid = document.getElementById('team-bio-grid');
+
+            // Fungsi untuk memilih tim
+            function selectTeam(value, name) {
+                selectedTeamName.textContent = name;
+                
+                // Update kelas 'active' pada opsi
+                options.forEach(opt => {
+                    opt.classList.remove('active');
+                    if (opt.dataset.value === value) {
+                        opt.classList.add('active');
+                    }
+                });
+
+                // Logika untuk menampilkan grid yang benar
+                if (value === 'ai') {
+                    aiGrid.classList.remove('hidden');
+                    bioGrid.classList.add('hidden');
+                } else {
+                    aiGrid.classList.add('hidden');
+                    bioGrid.classList.remove('hidden');
+                }
+
+                // Tutup dropdown
+                dropdown.classList.remove('open');
+            }
+
+            // Event listener untuk membuka/tutup dropdown
+            dropdownTrigger.addEventListener('click', () => {
+                dropdown.classList.toggle('open');
+            });
+
+            // Event listener untuk setiap opsi
+            options.forEach(option => {
+                option.addEventListener('click', () => {
+                    const value = option.dataset.value;
+                    const name = option.textContent;
+                    selectTeam(value, name);
+                });
+            });
+
+            // Tutup dropdown jika klik di luar
+            document.addEventListener('click', (event) => {
+                if (!dropdown.contains(event.target)) {
+                    dropdown.classList.remove('open');
+                }
+            });
+
+
+            // --- Logika Layout Alternating (tidak berubah) ---
+            const allGrids = document.querySelectorAll('.team-alternating-grid');
+            allGrids.forEach(grid => {
+                const cards = grid.querySelectorAll('.team-member-card');
+                cards.forEach((card, index) => {
+                    if (index % 2 !== 0) {
+                        card.classList.add('team-member-card-reverse');
+                    }
+                });
+            });
+
+            // --- Logika Modal Detail (tidak berubah) ---
+            const modal = document.getElementById('team-detail-modal');
+            const modalCloseBtn = document.querySelector('.modal-close-btn');
+            const learnMoreBtns = document.querySelectorAll('.learn-more-detail-btn');
+
+            const modalName = document.getElementById('modal-member-name');
+            const modalRole = document.getElementById('modal-member-role');
+            const modalBio = document.getElementById('modal-member-bio');
+            const modalSpecialization = document.getElementById('modal-member-specialization');
+            const modalContribution = document.getElementById('modal-member-contribution');
+
+            function populateModal(card) {
+                modalName.textContent = card.dataset.name;
+                modalRole.textContent = card.dataset.role;
+                
+                const populateList = (element, dataString) => {
+                    element.innerHTML = '';
+                    const items = JSON.parse(dataString);
+                    items.forEach(item => {
+                        const li = document.createElement('li');
+                        li.textContent = item;
+                        element.appendChild(li);
+                    });
+                };
+
+                populateList(modalBio, card.dataset.bio);
+                populateList(modalSpecialization, card.dataset.specialization);
+                populateList(modalContribution, card.dataset.contribution);
+            }
+
+            learnMoreBtns.forEach(btn => {
+                btn.addEventListener('click', (event) => {
+                    const card = event.target.closest('.team-member-card');
+                    populateModal(card);
+                    modal.classList.remove('hidden');
+                });
+            });
+
+            function closeModal() {
+                modal.classList.add('hidden');
+            }
+
+            modalCloseBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Kesehatan Andalan Anda</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <!-- Baris Atas: Logo dan Nama Website -->
+        <div class="top-header">
+            <div class="container">
+                <a href="{{ url_for('home') }}" class="top-logo-link">
+                    <img src="{{ url_for('static', filename='/Muka Makhluk/messageImage_1762668932378.jpg') }}" alt="G.O.B.L.O.K Logo" class="top-logo-img">
+                </a>
+                <div class="site-name">
+                    <h1>Generative Online Bot for Learning and Optimizing Knowledge Kesehatan</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Baris Bawah: Menu Navigasi Utama -->
+        <nav class="main-navbar">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li><a href="{{ url_for('home') }}" class="{{ 'active' if request.path == url_for('home') else '' }}">Home</a></li>
+                    <li><a href="{{ url_for('ilmu_mata_page') }}" class="{{ 'active' if request.path == url_for('ilmu_mata_page') else '' }}">Ilmu Mata</a></li>
+                    <li><a href="{{ url_for('kanker_page') }}" class="{{ 'active' if request.path == url_for('kanker_page') else '' }}">Kanker</a></li>
+                    <li><a href="{{ url_for('chatbot_page') }}" class="{{ 'active' if request.path == url_for('chatbot_page') else '' }}">Chatbot</a></li>
+                    <li><a href="{{ url_for('our_team_page') }}" class="{{ 'active' if request.path == url_for('our_team_page') else '' }}">Our Team</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section Redesigned -->
+        <section class="hero-carousel-section">
+            <div class="container">
+                <div class="hero-carousel">
+                    
+                    <!-- TAMBAHKAN TRACK INI -->
+                    <div class="carousel-track">
+                        <!-- Kartu 1: Cek Kesehatan Mata -->
+                        <div class="carousel-card">
+                            <div class="hero-content">
+                                <p class="hero-subtitle">Kesehatan Mata</p>
+                                <h1>Jangan tunda kesehatan Anda</h1>
+                                <p>Temukan kemungkinan kondisi kesehatan mata Anda dengan mudah dan cepat melalui asisten AI kami. Dapatkan analisis awal secara instan hanya dengan mengirimkan gambar.</p>
+                                <a href="{{ url_for('chatbot_page') }}" class="btn-primary">Yuk cek mata dengan chatbot</a>
+                            </div>
+                            <div class="hero-image">
+                                <img src="{{ url_for('static', filename='uploads/Emyu-removebg-preview.png') }}" alt="Ilustrasi Cek Kesehatan Mata dengan AI">
+                            </div>
+                        </div>
+
+                        <!-- Kartu 2: Informasi Mata -->
+                        <div class="carousel-card">
+                            <div class="hero-content">
+                                <p class="hero-subtitle">Pengetahuan Mata</p>
+                                <h1>Mata adalah organ berharga Anda</h1>
+                                <p>Mata adalah jendela dunia yang memungkinkan Anda melihat keindahan sekitar. Menjaga kesehatannya dengan pemahaman yang baik adalah investasi terbaik untuk masa depan penglihatan Anda.</p>
+                                <a href="{{ url_for('ilmu_mata_page') }}" class="btn-primary">Pelajari Lebih Lanjut</a>
+                            </div>
+                            <div class="hero-image">
+                                <img src="{{ url_for('static', filename='Muka Makhluk/Eye-removebg-preview.png') }}" alt="Ilustrasi Anatomi Mata">
+                            </div>
+                        </div>
+
+                        <!-- Kartu 3: Informasi Kanker -->
+                        <div class="carousel-card">
+                            <div class="hero-content">
+                                <p class="hero-subtitle">Kanker</p>
+                                <h1>Kanker adalah penyakit mematikan</h1>
+                                <p>Deteksi dini adalah kunci untuk meningkatkan tingkat kesembuhan. Kenali gejala-gejalanya dan lakukan pemeriksaan rutin untuk melindungi diri Anda dan orang tersayang.</p>
+                                <a href="{{ url_for('kanker_page') }}" class="btn-primary">Pelajari Lebih Lanjut</a>
+                            </div>
+                            <div class="hero-image">
+                                <img src="{{ url_for('static', filename='Muka Makhluk/Kanker-removebg-preview.png') }}" alt="Ilustrasi Deteksi Dini Kanker">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control prev">&#10094;</button>
+                    <button class="carousel-control next">&#10095;</button>
+                </div>
+                
+                <!-- Indikator Dot -->
+                <div class="carousel-dots"></div>
+            </div>
+        </section>
+
+        <!-- Team Section Redesigned -->
+        <section class="team-overview-section">
+            <div class="container">
+                <h2>Tim Kami</h2>
+                <div class="team-overview-grid">
+                    <!-- Kotak 1: Tim Komputasi Intelegensia -->
+                    <div class="team-overview-card">
+                        <div class="card-image">
+                            <!-- GANTI DENGAN GAMBAR ANDA -->
+                            <img src="{{ url_for('static', filename='Muka Makhluk/Team 1.jpg') }}" alt="Tim Komputasi Intelegensia">
+                        </div>
+                        <div class="card-content">
+                            <h3>Tim Komputasi Intelegensia</h3>
+                            <p>Tim yang berfokus pada pengembangan dan penerapan model AI untuk menganalisis data medis, memberikan solusi cerdas dan akurat.</p>
+                            <a href="{{ url_for('our_team_page', team='ai') }}" class="btn-primary">Kenalan dengan kami</a>
+                        </div>
+                    </div>
+
+                    <!-- Kotak 2: Tim Bioinformatika -->
+                    <div class="team-overview-card">
+                        <div class="card-image">
+                            <!-- GANTI DENGAN GAMBAR ANDA -->
+                            <img src="{{ url_for('static', filename='Muka Makhluk/Team 2.jpg') }}" alt="Tim Bioinformatika">
+                        </div>
+                        <div class="card-content">
+                            <h3>Tim Bioinformatika</h3>
+                            <p>Tim ahli yang mengintegrasikan ilmu biologi, data science, dan teknologi informasi untuk memahami data biologis yang kompleks.</p>
+                            <a href="{{ url_for('our_team_page', team='bio') }}" class="btn-primary">Kenalan dengan kami</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="redirect-modal" class="redirect-modal hidden">
+        <div class="redirect-modal-box">
+            <div class="spinner"></div>
+            <p>Sedang mengarahkan Anda ke halaman chatbot...</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>
